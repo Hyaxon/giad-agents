@@ -79,3 +79,18 @@ repository does not install a test image or fetch project dependencies.
 
 See the [implementation](../../src/giad_agents/code_review.py) and
 [compatibility checks](../../docs/compatibility.md).
+
+## GIAD example mirror
+
+GIAD's bundled `example/code-review` uses an exact source mirror of this reviewer
+and its protocol peer. Check synchronization from this repository:
+
+```sh
+make check-giad-example GIAD_DIR=../giad
+python3 tools/sync_giad_example.py --runtime ../giad --write
+```
+
+The write command copies the three package modules and matching manifest metadata.
+Verify example policy, image packaging, and GIAD's contributor checks after an
+update. The runtime checkout is required only for synchronization and integration
+checks; installed packages are self-contained.

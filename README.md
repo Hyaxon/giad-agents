@@ -9,6 +9,8 @@ This initial collection is version `0.1.0`. Packages are maintained here, built
 locally into one trusted Linux image, and selected with explicit manifests and
 host policy. The catalog is a source index; GIAD does not discover or install it
 automatically. No container registry release is published yet.
+Official status grants no extra access: these agents use the same public protocol
+and explicit host capability policy as third-party packages.
 
 ## Catalog
 
@@ -88,6 +90,14 @@ CI runs the same checks against the pinned compatibility baseline.
 See [authoring](docs/authoring.md), [contributing](CONTRIBUTING.md), and
 [repository instructions](AGENTS.md). Changes to the runtime belong in GIAD;
 specialist prompts and review behavior belong here.
+
+## Planned agents and collection work
+
+See the [agent roadmap](docs/roadmap.md) for proposed MAGI passes, Test Writer,
+Wacht/CVE review, broader software-engineering agents, quality evaluation, and
+image releases. These proposals are not included in the current catalog and have
+no committed delivery order. Runtime scheduling, tools, integrations, and
+installation belong in [GIAD's roadmap](https://github.com/Hyaxon/giad/blob/main/docs/roadmap.md).
 
 ## License
 

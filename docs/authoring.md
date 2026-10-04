@@ -4,6 +4,9 @@ The runtime is responsible for the public wire types and validation. Read its
 `docs/agent-protocol.md` and `pkg/protocol/` in the GIAD checkout matching the
 [compatibility baseline](compatibility.md). This repo provides implementations
 and package metadata, not a second protocol or runtime.
+Official agents have no special privileges: use the same public capabilities and
+trusted host grants as third-party agents. The [agent roadmap](roadmap.md) describes
+proposed packages and runtime dependencies, not additional available broker tools.
 
 ## Package layout
 

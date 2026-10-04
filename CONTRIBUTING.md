@@ -3,6 +3,9 @@
 This repository maintains official GIAD agent packages and their source catalog.
 Keep runtime/authentication/sandbox/publication changes in GIAD. Agent prompts,
 review strategies, and package-specific evaluation belong here.
+Use the [agent roadmap](docs/roadmap.md) to discuss proposed packages; runtime
+prerequisites and public capability changes belong in GIAD. Keep unimplemented
+proposals out of the catalog and manifests.
 
 ## Add or change an agent
 

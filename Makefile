@@ -1,4 +1,4 @@
-.PHONY: all check image test-image images smoke sandbox-smoke lint
+.PHONY: all check check-giad-example image test-image images smoke sandbox-smoke lint
 
 PYTHON ?= python3
 GIAD_DIR ?= ../giad
@@ -8,6 +8,9 @@ all: check
 
 check:
 	PYTHONPATH=src PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m unittest discover -s tests -v
+
+check-giad-example:
+	$(PYTHON) tools/sync_giad_example.py --runtime "$(GIAD_DIR)"
 
 image:
 	docker build -t giad-agents:$(VERSION) .

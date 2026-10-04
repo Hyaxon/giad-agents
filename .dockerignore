@@ -4,3 +4,5 @@
 !src/giad_agents/*.py
 !LICENSE
 !NOTICE
+**/__pycache__
+**/*.py[cod]
