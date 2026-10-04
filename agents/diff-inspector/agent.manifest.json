@@ -1,0 +1,20 @@
+{
+  "apiVersion": "giad/v1",
+  "name": "diff-inspector",
+  "version": "0.1.0",
+  "entrypoint": {
+    "command": "/usr/local/bin/python3",
+    "args": [
+      "-m",
+      "giad_agents.diff_inspector"
+    ]
+  },
+  "capabilities": {
+    "required": [
+      "git.diff",
+      "repository.instructions"
+    ],
+    "optional": []
+  },
+  "modelProfiles": []
+}

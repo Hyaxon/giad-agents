@@ -1,0 +1,12 @@
+# Replace the model with an exact installed tag from ollama list.
+[models.review]
+provider = "ollama"
+endpoint = "http://127.0.0.1:11434"
+model = "REPLACE_WITH_INSTALLED_MODEL"
+
+[agents.code-review]
+sandbox_image = "giad-agents:0.1.0"
+capabilities = ["git.diff", "repository.read", "repository.search", "repository.instructions", "model.chat", "github.linked_issues"]
+# Optional tests: add "tests.run" to capabilities and configure an approved
+# test_profiles list with a trusted [tests.NAME] image and command.
+# See docs/authoring.md; no test image or profile is installed by this repo.

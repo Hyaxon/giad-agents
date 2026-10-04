@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out agents
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Check agents and catalog
+        run: make check
+      - name: Lint Markdown
+        run: make lint
+      - name: Check out tested GIAD baseline
+        uses: actions/checkout@v6
+        with:
+          repository: Hyaxon/giad
+          ref: 71a66e8849ed83a7945c23973b35dbd6131eb3a3
+          path: .runtime
+          persist-credentials: false
+      - name: Set up GIAD Go toolchain
+        uses: actions/setup-go@v6
+        with:
+          go-version-file: .runtime/go.mod
+          cache-dependency-path: .runtime/go.sum
+      - name: Check Go fixture formatting
+        run: test -z "$(gofmt -l tests/integration/*.go)"
+      - name: Smoke-test real GIAD broker
+        run: make smoke GIAD_DIR=.runtime
+      - name: Build trusted agent image
+        run: make image
+      - name: Smoke-test isolated agents
+        run: make sandbox-smoke GIAD_DIR=.runtime

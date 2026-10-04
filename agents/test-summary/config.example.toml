@@ -1,0 +1,12 @@
+# Build a project-specific trusted test image before using this configuration.
+# It must include GIAD's /giad-test helper and all project dependencies.
+[agents.test-summary]
+sandbox_image = "giad-agents:0.1.0"
+capabilities = ["repository.instructions", "tests.run"]
+test_profiles = ["unit"]
+
+[tests.unit]
+image = "REPLACE_WITH_PREINSTALLED_TEST_IMAGE"
+command = "/usr/local/bin/python3"
+args = ["-m", "unittest", "discover"]
+timeout_seconds = 120

@@ -1,0 +1,6 @@
+**
+!src
+!src/giad_agents
+!src/giad_agents/*.py
+!LICENSE
+!NOTICE

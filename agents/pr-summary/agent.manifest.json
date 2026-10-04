@@ -1,0 +1,19 @@
+{
+  "apiVersion": "giad/v1",
+  "name": "pr-summary",
+  "version": "0.1.0",
+  "entrypoint": {
+    "command": "/usr/local/bin/python3",
+    "args": [
+      "-m",
+      "giad_agents.pr_summary"
+    ]
+  },
+  "capabilities": {
+    "required": [
+      "repository.instructions"
+    ],
+    "optional": []
+  },
+  "modelProfiles": []
+}

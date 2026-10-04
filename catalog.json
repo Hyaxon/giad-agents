@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "agents": [
+    {
+      "name": "pr-summary",
+      "version": "0.1.0",
+      "protocol": "giad/v1",
+      "status": "starter",
+      "maintainer": "Hyaxon",
+      "manifest": "agents/pr-summary/agent.manifest.json",
+      "configuration": "agents/pr-summary/config.example.toml",
+      "documentation": "agents/pr-summary/README.md",
+      "image": "giad-agents:0.1.0",
+      "description": "Metadata summary; no defect analysis."
+    },
+    {
+      "name": "diff-inspector",
+      "version": "0.1.0",
+      "protocol": "giad/v1",
+      "status": "starter",
+      "maintainer": "Hyaxon",
+      "manifest": "agents/diff-inspector/agent.manifest.json",
+      "configuration": "agents/diff-inspector/config.example.toml",
+      "documentation": "agents/diff-inspector/README.md",
+      "image": "giad-agents:0.1.0",
+      "description": "Diff retrieval and coverage; no defect analysis."
+    },
+    {
+      "name": "code-review",
+      "version": "0.1.0",
+      "protocol": "giad/v1",
+      "status": "starter",
+      "maintainer": "Hyaxon",
+      "manifest": "agents/code-review/agent.manifest.json",
+      "configuration": "agents/code-review/config.example.toml",
+      "documentation": "agents/code-review/README.md",
+      "image": "giad-agents:0.1.0",
+      "description": "General PR review with adaptive source inspection, repository search, issue context, and approved tests."
+    },
+    {
+      "name": "test-summary",
+      "version": "0.1.0",
+      "protocol": "giad/v1",
+      "status": "starter",
+      "maintainer": "Hyaxon",
+      "manifest": "agents/test-summary/agent.manifest.json",
+      "configuration": "agents/test-summary/config.example.toml",
+      "documentation": "agents/test-summary/README.md",
+      "image": "giad-agents:0.1.0",
+      "description": "Model-free summary of observed approved head-only test runs."
+    }
+  ]
+}

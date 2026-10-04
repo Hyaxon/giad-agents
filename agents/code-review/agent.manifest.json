@@ -1,0 +1,28 @@
+{
+  "apiVersion": "giad/v1",
+  "name": "code-review",
+  "version": "0.1.0",
+  "entrypoint": {
+    "command": "/usr/local/bin/python3",
+    "args": [
+      "-m",
+      "giad_agents.code_review"
+    ]
+  },
+  "capabilities": {
+    "required": [
+      "git.diff",
+      "repository.read",
+      "repository.search",
+      "repository.instructions",
+      "model.chat"
+    ],
+    "optional": [
+      "tests.run",
+      "github.linked_issues"
+    ]
+  },
+  "modelProfiles": [
+    "review"
+  ]
+}

@@ -1,0 +1,6 @@
+GIAD Agents
+
+The starter agents are adapted from the GIAD protocol examples, distributed
+under the Apache License, Version 2.0. The originating source revision is
+recorded in compatibility.json. The protocol implementation and integration
+fixtures in this collection have been extended for the official agent packages.

@@ -1,0 +1,20 @@
+{
+  "apiVersion": "giad/v1",
+  "name": "test-summary",
+  "version": "0.1.0",
+  "entrypoint": {
+    "command": "/usr/local/bin/python3",
+    "args": [
+      "-m",
+      "giad_agents.test_summary"
+    ]
+  },
+  "capabilities": {
+    "required": [
+      "repository.instructions",
+      "tests.run"
+    ],
+    "optional": []
+  },
+  "modelProfiles": []
+}
