@@ -1,6 +1,6 @@
 # Compatibility
 
-The initial packages target GIAD `1.0.0` and the public `giad/v1` contract.
+The initial packages target GIAD `1.1.0` and the public `giad/v1` contract.
 The tested source baseline is recorded in [compatibility.json](../compatibility.json):
 
 - Repository: `git@github.com:Hyaxon/giad.git`.

@@ -1,6 +1,6 @@
 {
   "protocol": "giad/v1",
-  "runtimeVersion": "1.0.0",
+  "runtimeVersion": "1.1.0",
   "repository": "git@github.com:Hyaxon/giad.git",
   "revision": "71a66e8849ed83a7945c23973b35dbd6131eb3a3"
 }
