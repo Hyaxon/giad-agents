@@ -7,7 +7,10 @@ Use the [agent roadmap](docs/roadmap.md) to discuss proposed packages; runtime
 prerequisites and public capability changes belong in GIAD. Keep unimplemented
 proposals out of the catalog and manifests.
 
-## Add or change an agent
+## Contribute an official agent
+
+This section is for admission to the official collection. Independently authored
+custom agents do not need catalog registration; see [authoring](docs/authoring.md).
 
 1. Follow [authoring](docs/authoring.md) and the tested `giad/v1` contract.
 2. Add an implementation, explicit manifest, example policy, and agent README.
@@ -38,3 +41,9 @@ Container or packaged-agent changes require real Docker integration. State which
 checks ran and explain unavailable checks. Keep generated drafts, keys, identity
 files, and personal configuration out of commits. A failed model/session must not
 be reported as a successful clean review.
+
+## Issues and discussions
+
+Use issues for bugs and concrete tasks, and discussions for ideas and design
+choices. Documentation fixes, review fixtures, and dependency parsers are good
+places to start contributing.

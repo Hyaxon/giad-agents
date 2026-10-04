@@ -8,6 +8,36 @@ Official agents have no special privileges: use the same public capabilities and
 trusted host grants as third-party agents. The [agent roadmap](roadmap.md) describes
 proposed packages and runtime dependencies, not additional available broker tools.
 
+## Standalone custom agents
+
+The collection is optional. A custom package needs a compatible manifest,
+preinstalled trusted image, and explicit host policy; it does not need an entry
+in the official catalog or a runtime change. Use the starter source and peer
+helper as references, preserve their license/attribution, and give each package
+its own name and version.
+
+Keep package sources, manifests, and host configuration outside the PR checkout
+being reviewed. Declare only required/optional broker tools, map any model profiles
+in host policy, and build/install the trusted image explicitly before reviewing.
+Use the existing CLI with your own paths:
+
+```sh
+giad review 42 --repo OWNER/REPO \
+  --agent-manifest /path/to/my-agent/agent.manifest.json \
+  --config /path/to/my-agent/config.toml --json > draft.json
+```
+
+The manifest name must match the selected agent block in policy, whose
+`sandbox_image` identifies your installed image. Repeat with a second named
+package and policy to use another custom agent. Review logic may be deterministic
+or use granted host model tools; credentials/endpoints remain in GIAD. Future web
+capabilities cannot be declared as required until the runtime implements them.
+Publication remains a separate preview/confirmed action.
+
+Minimal-template, scaffold, and development-runner commands are
+[planned](roadmap.md); the example above
+uses the current explicit-manifest workflow.
+
 ## Package layout
 
 - `src/giad_agents/NAME.py`: agent behavior; underscores in Python module names.

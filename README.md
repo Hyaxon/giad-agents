@@ -1,9 +1,10 @@
 # GIAD Agents
 
 The official starter agent collection and source catalog for GIAD, the
-self-hosted pull-request review runtime. Agents supply review judgment over
-`giad/v1`; GIAD owns GitHub access, repository tools, models, sandboxed tests,
-and separately confirmed publication.
+self-hosted runtime for programmable code-review agents. Build custom agents to
+audit, review, and engage with GitHub PRs, with models or deterministic logic.
+Agents supply review judgment over `giad/v1`; GIAD owns GitHub access, repository
+tools, models, sandboxed tests, and separately confirmed publication.
 
 This initial collection is version `0.1.0`. Packages are maintained here, built
 locally into one trusted Linux image, and selected with explicit manifests and
@@ -91,13 +92,11 @@ See [authoring](docs/authoring.md), [contributing](CONTRIBUTING.md), and
 [repository instructions](AGENTS.md). Changes to the runtime belong in GIAD;
 specialist prompts and review behavior belong here.
 
-## Planned agents and collection work
+## Planned features
 
-See the [agent roadmap](docs/roadmap.md) for proposed MAGI passes, Test Writer,
-Wacht/CVE review, broader software-engineering agents, quality evaluation, and
-image releases. These proposals are not included in the current catalog and have
-no committed delivery order. Runtime scheduling, tools, integrations, and
-installation belong in [GIAD's roadmap](https://github.com/Hyaxon/giad/blob/main/docs/roadmap.md).
+See the [agent roadmap](docs/roadmap.md) for templates, evaluation, and planned
+reviewers. Setup, tools, and automation belong in
+[GIAD's roadmap](https://github.com/Hyaxon/giad/blob/main/docs/roadmap.md).
 
 ## License
 
